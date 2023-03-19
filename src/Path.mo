@@ -2,10 +2,8 @@ import Int "mo:base/Int";
 import Text "mo:base/Text";
 import Char "mo:base/Char";
 import Iter "mo:base/Iter";
-import Debug "mo:base/Debug";
 import Option "mo:base/Option";
 import Buffer "mo:base/Buffer";
-import Principal "mo:base/Principal";
 
 module {
 
