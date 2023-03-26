@@ -113,6 +113,10 @@ let suite = S.suite("Filepaths", [
       Path.depth( AbsolutePath ),
       M.equals(T.nat(4))),
 
+    S.test("Dirname equals Root",
+      Path.is_root(Path.dirname("/test")),
+      M.equals(T.bool(true))),
+
     S.test("Relative path depth == 4",
       Path.depth( RelativePath ),
       M.equals(T.nat(4))),

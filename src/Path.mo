@@ -66,7 +66,8 @@ module {
       for ( i in Iter.range(0, depth-2) ){
         ret #= elems[i] # slash
       };
-    Text.trimEnd(ret, #char( Slash ));
+    if ( ret == Text.fromChar( Slash ) ) ret
+    else Text.trimEnd(ret, #char( Slash ));
   };
 
   public func basename( path : Path ) : Text {
