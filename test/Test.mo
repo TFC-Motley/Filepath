@@ -69,6 +69,10 @@ let suite = S.suite("Filepaths", [
       Path.is_absolute( AbsolutePath ),
       M.equals(T.bool(true))),
 
+    S.test("Create path from subelements",
+      Path.fromElements(TestElements, 2),
+      M.equals(T.text( AbsoluteDirPath ))),
+
     S.test("Input IS NOT an absolute path",
       Path.is_absolute( RelativePath ),
       M.equals(T.bool(false))),

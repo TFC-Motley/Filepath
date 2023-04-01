@@ -46,6 +46,12 @@ module {
     (Buffer.toArray( buffer ), depth)
   };
 
+  public func fromElements(elems: Elements, depth: Depth) : Path {
+    var ret : Path = Text.fromChar( Slash );
+    for ( i in Iter.range(0, depth) ) ret := ret # elems[i] # Text.fromChar( Slash );
+    Text.trimEnd(ret, #char( Slash ) )
+  };
+
   public func index( path : Path, index : Nat ) : ?Text {
     let (elems, depth) : (Elements, Depth) = elements( path );
     if ( depth > index ) ?elems[index]
